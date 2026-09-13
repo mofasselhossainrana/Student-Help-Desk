@@ -8,6 +8,7 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = ['id', 'content', 'ticket', 'user', 'created_at']
+        read_only_fields = ['user']
 
 
 class TicketSerializer(serializers.ModelSerializer):
@@ -18,6 +19,7 @@ class TicketSerializer(serializers.ModelSerializer):
             'priority', 'status', 'user',
             'created_at', 'updated_at'
         ]
+        read_only_fields = ['user']
 
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
